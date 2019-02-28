@@ -1,0 +1,12 @@
+<design:component label="Einstein Discovery 日本語版">
+	<design:attribute label="項目API名(予測値)" required="true" name="field1" default=""/>
+    <design:attribute label="項目API名(予測の説明情報)" required="true" name="field2" default=""/>
+    <design:attribute label="項目API名(リコメンド情報)" required="true" name="field3" default=""/>
+    <design:attribute label="ラベル（タイトル）" name="label_title" default="Einstein Discovery"/>
+    <design:attribute label="ラベル（予測値）" name="label_field_name" default="予測値"/>
+    <design:attribute label="ラベル（予測値の単位）" name="label_unit" default="%"/>
+    <design:attribute label="ラベル（主な要因）" name="label_section_title1" default="主な要因"/>
+    <design:attribute label="ラベル（リコメンド）" name="label_section_title2" default="リコメンド"/>
+    <design:attribute label="基準値" name="baseValue" default="60"/>
+    <design:attribute label="色の反転" name="reverseColor" default="false"/>    
+</design:component>

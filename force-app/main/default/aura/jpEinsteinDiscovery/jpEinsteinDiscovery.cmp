@@ -1,0 +1,80 @@
+<aura:component controller="jpEinsteinDiscoveryController" implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    
+    <!-- Lightningアプリケーションビルダープロパティ設定項目 -->
+    <aura:attribute type="String" name="field1"/>
+    <aura:attribute type="String" name="field2"/>
+    <aura:attribute type="String" name="field3"/>
+    <aura:attribute type="String" name="label_title"/>
+    <aura:attribute type="String" name="label_unit"/>
+    <aura:attribute type="String" name="label_field_name"/>
+    <aura:attribute type="String" name="label_section_title1"/>
+    <aura:attribute type="String" name="label_section_title2"/>
+    <aura:attribute type="Boolean" name="reverseColor" default="false"/>    
+    <aura:attribute type="String" name="baseValue"/>
+    <!-- /Lightningアプリケーションビルダープロパティ設定項目 -->
+    
+    <!-- Privateプロパティ -->
+    <aura:attribute type="Object" name="output1"/>
+    <aura:attribute type="Object" name="output2"/>
+    <aura:attribute type="Object" name="output3"/>
+    <!-- /Privateプロパティ -->
+
+    <!-- イベントリスナー -->
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <!-- イベントリスナー -->
+
+    <!-- View -->
+    <article class="slds-card">
+        <div class="slds-grid slds-einstein-header slds-card__header">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3">
+                    <div class="slds-media__body">
+                        <h2 class="slds-truncate" title="{!v.label_title}">
+                            <span class="slds-text-heading_small my-text-bold">{!v.label_title}</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"></div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner slds-p-vertical_medium">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem padding="around-small" size="6">
+                    <div class="slds-text-heading_medium slds-truncate slds-p-vertical_xx-small slds-text-color_weak">{!v.label_field_name}</div>
+                 </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small" size="6">
+                    <div class="{!'slds-text-heading_large slds-text-align_right slds-text-color_' + v.output1.color}">{!v.output1.value} <span class="slds-text-heading_small">{!v.label_unit}</span></div>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small" size="12">
+                     <h3 class="slds-text-title slds-text-align_center slds-truncate slds-p-vertical_xx-small my-section-title">{!v.label_section_title1}</h3>
+                </lightning:layoutItem>
+                <aura:iteration items="{!v.output2}" var="item">
+                    <lightning:layoutItem padding="horizontal-small" size="9">
+                        <div class="slds-text-body_small slds-p-vertical_xx-small">
+                            <aura:unescapedHtml value="{!item.jpText}"/>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem padding="horizontal-small" size="3">
+                        <div class="{!'slds-text-align_right slds-p-vertical_xx-small slds-text-color_' + item.color}">{!item.value}</div>
+                    </lightning:layoutItem>            
+                </aura:iteration>
+                <lightning:layoutItem padding="around-small" size="12">
+                     <h3 class="slds-text-title slds-text-align_center slds-truncate slds-p-vertical_xx-small my-section-title">{!v.label_section_title2}</h3>
+                </lightning:layoutItem>
+                <aura:iteration items="{!v.output3}" var="item">
+                    <lightning:layoutItem padding="horizontal-small" size="9">
+                        <div class="slds-text-body_small slds-p-vertical_xx-small">
+                            <aura:unescapedHtml value="{!item.jpText}"/>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem padding="horizontal-small" size="3">
+                        <div class="{!'slds-text-align_right slds-p-vertical_xx-small slds-text-color_' + item.color}">{!item.value}</div>
+                    </lightning:layoutItem>
+                </aura:iteration>
+            </lightning:layout>
+        </div>        
+    </article>    
+    <!-- /View -->
+
+</aura:component>
