@@ -4,20 +4,20 @@ Einstein Discovery Writeback機能を利用する中で、Lightningページに�
 ## 構成
 本GitリポジトリはSalesforceDXプロジェクト形式にて、以下のメタデータを含みます。
 - Apexクラス
--- *jpEinsteinDiscoveryController*
--- *jpEinsteinDiscoveryControllerTest*
+    - *jpEinsteinDiscoveryController*
+    - *jpEinsteinDiscoveryControllerTest*
 
 - Lightningコンポーネント
--- *jpEinsteinDiscovery* (**Einstein Discovery 日本語版**)
+    - *jpEinsteinDiscovery* (**Einstein Discovery 日本語版**)
 
 ## ご利用方法
-##### 0.前提条件
+### 0.前提条件
 Einstein Discovery Writeback機能を利用するために必要なすべての作業を完了します。
 
-##### 1.デプロイ
+### 1.デプロイ
 本SalesforceDXプロジェクトをSalesforce組織にデプロイします。
 
-##### 2.Lightningレコードページへのコンポーネント配置
+### 2.Lightningレコードページへのコンポーネント配置
 デプロイ完了後、LightningアプリケーションビルダーのLightningコンポーネント一覧に表示されるコンポーネント **Einstein Discovery 日本語版** をLightningレコードページに配置し、プロパティ設定にて以下項目を設定します。
 - 項目API名(予測値)　**※入力必須**
 - 項目API名(予測の説明情報)　**※入力必須**
