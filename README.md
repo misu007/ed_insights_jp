@@ -1,6 +1,10 @@
 # Einstein Discovery 日本語版Lightningコンポーネント サンプルコード 
 Einstein Discovery Writeback機能を利用する中で、Lightningページに、予測値/詳細/リコメンドを視覚的に分かりやすく表示するための日本語版Lightningコンポーネントのサンプルです。
 
+#### 本リポジトリ内容の非管理パッケージ
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t7F000003imyk
+
+
 ## 構成
 本GitリポジトリはSalesforceDXプロジェクト形式にて、以下のメタデータを含みます。
 - Apexクラス
